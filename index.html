@@ -7731,7 +7731,8 @@ function updateActive(items){ items.forEach(x=>x.classList.remove('active')); if
 document.addEventListener('click', e=>{ if(e.target!==placeInput && !suggestionsBox.contains(e.target)) suggestionsBox.style.display='none'; });
 
 /* ===== API ===== */
-const JP_SWISS_API_URL='http://127.0.0.1:8000/calculate';
+const JP_SWISS_API_URL =
+  'https://jps-astro-api.onrender.com/calculate';
 /*
   Local Swiss Ephemeris backend.
   Settings are fixed by app.py:
