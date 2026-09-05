@@ -50,6 +50,7 @@ app.add_middleware(
         "http://127.0.0.1:5500",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://jayaprakash3195.github.io",
     ],
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
