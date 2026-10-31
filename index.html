@@ -6164,6 +6164,35 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
 }
 </style>
 
+
+<!-- JP's Astro Research: Android APK announcement (GitHub Releases) -->
+<style id="jp-apk-download-styles">
+  #jpApkBanner{
+    margin:12px auto 18px; padding:16px 20px;
+    border:1px solid var(--outline,#b9c9db); border-radius:16px;
+    background:linear-gradient(120deg,rgba(23,83,151,.085),rgba(22,163,74,.075)),var(--card,#fff);
+    box-shadow:var(--shadow,0 2px 8px rgba(0,0,0,.08));
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+  }
+  #jpApkBanner .jp-apk-title{margin:0 0 4px;font-size:18px;font-weight:850;line-height:1.3;color:var(--ink,#0f172a)}
+  #jpApkBanner .jp-apk-desc{margin:0;font-size:13px;color:var(--muted,#475569);line-height:1.5}
+  #jpApkBanner .jp-apk-actions{display:flex;flex-direction:column;align-items:center;gap:6px;flex:0 0 auto}
+  #jpApkBanner #jpApkDownloadLink{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:44px;padding:10px 18px;border-radius:11px;
+    background:#166534;color:#fff!important;border:1px solid #14532d;
+    text-decoration:none;font-size:14px;font-weight:850;white-space:normal;text-align:center;
+  }
+  #jpApkBanner #jpApkDownloadLink:hover{background:#15803d}
+  #jpApkBanner #jpApkStatus{font-size:12px;color:var(--muted,#475569);text-align:center;max-width:270px}
+  #jpApkBanner a:focus-visible{outline:3px solid var(--ring,#2f76d2);outline-offset:3px}
+  @media(max-width:620px){
+    #jpApkBanner{padding:13px;gap:10px}
+    #jpApkBanner .jp-apk-actions{width:100%}
+    #jpApkBanner #jpApkDownloadLink{width:100%}
+  }
+</style>
+
 </head>
 <body>
 
@@ -6272,6 +6301,54 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
     </div>
 
   </header>
+
+  <!-- Public Android APK release notice: intentionally separate from astrology calculations. -->
+  <section id="jpApkBanner" aria-label="JP's Astro Research Android application">
+    <div>
+      <h3 class="jp-apk-title">📱 JP’s Astro Research – Android செயலி</h3>
+      <p class="jp-apk-desc">ஆண்ட்ராய்டு செயலியைப் பெறுங்கள் · Get the Android app (APK) · தமிழ் / English</p>
+    </div>
+    <div class="jp-apk-actions">
+      <a id="jpApkDownloadLink"
+         href="https://github.com/jayaprakash3195/jps-astro-research/releases"
+         target="_blank" rel="noopener noreferrer"
+         aria-describedby="jpApkStatus">📥 Android APK / செயலி</a>
+      <span id="jpApkStatus" role="status" aria-live="polite">APK வெளியீட்டுத் தகவலைப் பார்க்க GitHub Releases திறக்கவும்.</span>
+    </div>
+  </section>
+  <script id="jp-apk-release-link-script">
+  /* Detect the newest published APK asset. When none exists, the link safely opens
+     the releases listing rather than a broken direct-download URL. */
+  (function(){
+    var link = document.getElementById('jpApkDownloadLink');
+    var status = document.getElementById('jpApkStatus');
+    if(!link || !status || typeof fetch !== 'function') return;
+    fetch('https://api.github.com/repos/jayaprakash3195/jps-astro-research/releases/latest',
+          {headers:{'Accept':'application/vnd.github+json'}})
+      .then(function(response){
+        if(response.status === 404) return null; // No published release yet
+        if(!response.ok) throw new Error('GitHub releases unavailable');
+        return response.json();
+      })
+      .then(function(release){
+        var assets = release && Array.isArray(release.assets) ? release.assets : [];
+        var apk = assets.find(function(asset){return /\.apk$/i.test(asset.name || '') && asset.browser_download_url;});
+        if(apk){
+          link.href = apk.browser_download_url;
+          link.textContent = '⬇️ APK பதிவிறக்கம் / Download APK';
+          status.textContent = 'Android APK' + (release.tag_name ? ' · ' + release.tag_name : '') + ' · GitHub Releases';
+        } else if(release){
+          status.textContent = 'APK இன்னும் பதிவேற்றப்படவில்லை · APK not uploaded yet';
+        } else {
+          status.textContent = 'விரைவில் APK கிடைக்கும் · APK coming soon';
+        }
+      })
+      .catch(function(){
+        status.textContent = 'APK பதிப்புகளைப் பார்க்க GitHub Releases திறக்கவும் · View releases';
+      });
+  })();
+  </script>
+
 
       <div id="profileOpenModal" class="jp-profile-modal" style="display:none">
         <div class="jp-profile-modal-card">
