@@ -6184,6 +6184,9 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
     text-decoration:none;font-size:14px;font-weight:850;white-space:normal;text-align:center;
   }
   #jpApkBanner #jpApkDownloadLink:hover{background:#15803d}
+
+  #jpApkBanner #jpApkDriveFallback{font-size:12px;color:var(--brand,#175397);text-align:center}
+  #jpApkBanner #jpApkDriveFallback[hidden]{display:none!important}
   #jpApkBanner #jpApkStatus{font-size:12px;color:var(--muted,#475569);text-align:center;max-width:270px}
   #jpApkBanner a:focus-visible{outline:3px solid var(--ring,#2f76d2);outline-offset:3px}
   @media(max-width:620px){
@@ -6314,19 +6317,57 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
          target="_blank" rel="noopener noreferrer"
          aria-describedby="jpApkStatus">📥 Android APK / செயலி</a>
       <span id="jpApkStatus" role="status" aria-live="polite">APK வெளியீட்டுத் தகவலைப் பார்க்க GitHub Releases திறக்கவும்.</span>
+      <a id="jpApkDriveFallback" href="#" target="_blank" rel="noopener noreferrer" hidden>Google Drive-ல் திறக்கவும் / Open in Drive</a>
     </div>
   </section>
   <script id="jp-apk-release-link-script">
-  /* Detect the newest published APK asset. When none exists, the link safely opens
-     the releases listing rather than a broken direct-download URL. */
+  /*
+   * JP's Astro Research download link configuration
+   * 1) Upload your APK to Google Drive.
+   * 2) Share -> General access -> Anyone with the link -> Viewer.
+   * 3) Paste the copied Google Drive link between the two quotes below.
+   * If blank, the existing GitHub Releases APK link is used automatically.
+   * Example: https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing
+   */
+  var GOOGLE_DRIVE_APK_SHARE_LINK = '';
+
   (function(){
     var link = document.getElementById('jpApkDownloadLink');
     var status = document.getElementById('jpApkStatus');
-    if(!link || !status || typeof fetch !== 'function') return;
+    var fallback = document.getElementById('jpApkDriveFallback');
+    if(!link || !status) return;
+
+    // Accept only standard Google Drive file links; do not allow arbitrary redirects.
+    function getDriveFileId(raw){
+      try{
+        if(!raw || !raw.trim()) return null;
+        var url = new URL(raw.trim());
+        if(url.protocol !== 'https:' || url.hostname !== 'drive.google.com') return null;
+        var match = url.pathname.match(/^\/file\/d\/([a-zA-Z0-9_-]+)(?:\/|$)/);
+        var id = match ? match[1] : url.searchParams.get('id');
+        return id && /^[a-zA-Z0-9_-]+$/.test(id) ? id : null;
+      }catch(error){ return null; }
+    }
+
+    var driveId = getDriveFileId(GOOGLE_DRIVE_APK_SHARE_LINK);
+    if(driveId){
+      // Google Drive may show its confirmation screen for large APK files.
+      link.href = 'https://drive.google.com/uc?export=download&id=' + encodeURIComponent(driveId);
+      link.textContent = '⬇️ APK பதிவிறக்கம் / Download APK';
+      status.textContent = 'Google Drive · Android APK';
+      if(fallback){
+        fallback.href = 'https://drive.google.com/file/d/' + encodeURIComponent(driveId) + '/view';
+        fallback.hidden = false;
+      }
+      return;
+    }
+
+    // Existing working GitHub Releases fallback when a Drive link is not set.
+    if(typeof fetch !== 'function') return;
     fetch('https://api.github.com/repos/jayaprakash3195/jps-astro-research/releases/latest',
           {headers:{'Accept':'application/vnd.github+json'}})
       .then(function(response){
-        if(response.status === 404) return null; // No published release yet
+        if(response.status === 404) return null;
         if(!response.ok) throw new Error('GitHub releases unavailable');
         return response.json();
       })
