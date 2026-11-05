@@ -6232,7 +6232,6 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
     min-height:47px;border-radius:12px;padding:11px 19px;font-size:15px;font-weight:850;text-decoration:none;
     border:1px solid transparent;cursor:pointer;white-space:normal;text-align:center}
   #jpFrontPage #jpStartJathagam{background:#fff;color:#13446a}
-  #jpFrontPage #jpOpenSavedJathagam{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.5);color:#fff}
   #jpFrontPage .jp-entry-button:hover{filter:brightness(1.07);transform:translateY(-1px)}
   #jpFrontPage .jp-home-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:18px}
   #jpFrontPage .jp-home-card{min-width:0;border:1px solid var(--outline,#d7e2db);border-radius:17px;
@@ -6397,7 +6396,6 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
     <p class="jp-landing-sub">ஜோதிட ஆய்வுகள், அனுபவங்கள் மற்றும் ஜாதகக் கணக்கீடுகள்.<br>Astrology research, experiences and horoscope calculations.</p>
     <div class="jp-entry-buttons">
       <button type="button" id="jpStartJathagam" class="jp-entry-button">✨ ஜாதகம் கணக்கிடு / Calculate Horoscope</button>
-      <button type="button" id="jpOpenSavedJathagam" class="jp-entry-button">📂 சேமித்த ஜாதகம் திறக்க / Saved Horoscopes</button>
     </div>
   </section>
   <div class="jp-home-grid">
@@ -19978,7 +19976,6 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
   var formWrap=document.getElementById('jpHoroscopeResults');
   var hero=document.getElementById('jpFrontPage');
   var start=document.getElementById('jpStartJathagam');
-  var saved=document.getElementById('jpOpenSavedJathagam');
   var back=document.getElementById('jpGoHome');
 
   function openForm(){
@@ -20004,10 +20001,6 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
   window.jpOpenHoroscopeForm=openForm;
   window.jpGoPublicHome=goHome;
   start?.addEventListener('click',openForm);
-  saved?.addEventListener('click',function(){
-    // Reuse the existing saved-profile list and its Firestore/localStorage logic.
-    document.getElementById('btnOpenProfile')?.click();
-  });
   back?.addEventListener('click',goHome);
 
   // Public content configuration. To publish from your phone, edit
