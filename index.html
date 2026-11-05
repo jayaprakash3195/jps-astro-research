@@ -3,6 +3,7 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Jps Astro Research </title>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -6196,8 +6197,90 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
   }
 </style>
 
+
+<!-- JP's Astro Research: public homepage (2026-11) -->
+<style id="jp-public-homepage-style">
+  /* The landing page is public. Keep the legacy calculation app intact but closed. */
+  body.jp-home-view #legend, body.jp-home-view #btnLayoutTop,
+  body.jp-home-view #saveTarget, body.jp-home-view #btnSavePng,
+  body.jp-home-view #btnSavePdf, body.jp-home-view #btnHelp{display:none!important;}
+  body.jp-home-view #apiFormWrap,
+  body.jp-home-view #jpHoroscopeResults {display:none!important;}
+  body.jp-home-view #jpBackHome {display:none!important;}
+  body.jp-horoscope-view #jpFrontPage {display:none!important;}
+  body.jp-horoscope-view #apiFormWrap{display:grid;}
+  body.jp-horoscope-view:not(.jp-results-ready) #jpHoroscopeResults,
+  body.jp-horoscope-view:not(.jp-results-ready) #apiResult,
+  body.jp-horoscope-view:not(.jp-results-ready) #todayPanchangCard,
+  body.jp-horoscope-view:not(.jp-results-ready) #birthPanchangCard {display:none!important;}
+  body.jp-horoscope-view.jp-results-ready #jpHoroscopeResults{display:block!important;}
+  body.jp-horoscope-view #jpBackHome{display:flex!important;}
+  #jpHoroscopeResults[hidden]{display:none!important;}
+  #jpFrontPage{width:100%;max-width:none;margin:18px auto 20px;color:var(--ink,#0f172a)}
+  #jpFrontPage *,#jpBackHome *{box-sizing:border-box}
+  #jpFrontPage .jp-landing-hero{
+    position:relative;overflow:hidden;border-radius:22px;padding:clamp(20px,3.5vw,40px);
+    background:linear-gradient(125deg,#133d6c 0%,#195b75 51%,#27624b 100%);
+    box-shadow:0 10px 26px rgba(8,29,55,.16);color:#fff;
+  }
+  #jpFrontPage .jp-landing-hero:after{content:"✦";position:absolute;right:20px;top:-60px;font-size:240px;line-height:1;opacity:.065;pointer-events:none}
+  #jpFrontPage .jp-kicker{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#bfecdb;margin:0 0 9px}
+  #jpFrontPage h1{font-size:clamp(26px,3.6vw,43px);line-height:1.18;color:#fff;margin:0 0 9px;font-weight:900}
+  #jpFrontPage .jp-landing-sub{max-width:760px;font-size:clamp(14px,1.6vw,17px);line-height:1.65;color:#e2f4f6;margin:0 0 21px}
+  #jpFrontPage .jp-entry-buttons{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+  #jpFrontPage .jp-entry-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    min-height:47px;border-radius:12px;padding:11px 19px;font-size:15px;font-weight:850;text-decoration:none;
+    border:1px solid transparent;cursor:pointer;white-space:normal;text-align:center}
+  #jpFrontPage #jpStartJathagam{background:#fff;color:#13446a}
+  #jpFrontPage #jpOpenSavedJathagam{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.5);color:#fff}
+  #jpFrontPage .jp-entry-button:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  #jpFrontPage .jp-home-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:18px}
+  #jpFrontPage .jp-home-card{min-width:0;border:1px solid var(--outline,#d7e2db);border-radius:17px;
+    background:var(--card,#fff);box-shadow:var(--shadow,0 2px 10px rgba(0,0,0,.05));padding:16px}
+  #jpFrontPage .jp-home-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+  #jpFrontPage .jp-home-heading h2{margin:0;font-size:clamp(17px,2vw,22px);color:var(--brand,#175397)}
+  #jpFrontPage .jp-home-heading small{font-size:12px;color:var(--muted,#64748b)}
+  #jpFrontPage .jp-slide-viewport{position:relative;overflow:hidden;background:linear-gradient(145deg,#edf7f2,#eaf0fb);
+    border-radius:12px;min-height:360px;aspect-ratio:16/9;display:grid;place-items:center}
+  body.dark #jpFrontPage .jp-slide-viewport{background:#152535}
+  #jpFrontPage #jpHomeSlideImage{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain;object-position:center}
+  #jpFrontPage .jp-slide-overlay{position:absolute;inset:auto 0 0;padding:28px 14px 12px;
+    background:linear-gradient(transparent,rgba(6,23,39,.73));color:#fff;pointer-events:none}
+  #jpFrontPage .jp-slide-overlay strong{display:block;font-size:15px;color:#fff}
+  #jpFrontPage .jp-slide-overlay span{display:block;font-size:12px;color:#f0f6fc;margin-top:2px}
+  #jpFrontPage .jp-slide-placeholder{color:#345773;text-align:center;padding:24px;font-weight:700;font-size:14px}
+  #jpFrontPage .jp-slide-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px}
+  #jpFrontPage .jp-slide-controls button{min-width:38px;min-height:36px;padding:6px 12px;background:var(--card,#fff);
+    color:var(--ink,#0f172a);border:1px solid var(--outline,#cbd5e1);border-radius:9px;cursor:pointer}
+  #jpFrontPage #jpSlideCount{font-size:13px;color:var(--muted,#475569);font-variant-numeric:tabular-nums}
+  #jpFrontPage .jp-post-list{display:grid;gap:12px;max-height:none;overflow:visible}
+  #jpFrontPage .jp-post{padding:13px;border:1px solid var(--outline,#d7e2db);background:var(--bg,#fff);border-radius:12px}
+  #jpFrontPage .jp-post h3{font-size:16px;color:var(--brand,#175397);line-height:1.45;margin:0 0 6px}
+  #jpFrontPage .jp-post time{display:block;color:var(--muted,#64748b);font-size:12px;margin-bottom:8px}
+  #jpFrontPage .jp-post p{font-size:15px;line-height:1.8;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink,#0f172a)}
+  #jpFrontPage .jp-post-image{display:block;max-width:100%;height:auto;max-height:540px;object-fit:contain;margin:12px 0;border-radius:10px}
+  #jpFrontPage .jp-post-placeholder{padding:28px 16px;text-align:center;color:var(--muted,#64748b);line-height:1.75;
+    border:1px dashed var(--outline,#cbd5e1);border-radius:12px;font-size:14px}
+  #jpBackHome{display:none;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0 14px;
+    padding:10px 13px;border-radius:12px;background:var(--card,#fff);border:1px solid var(--outline,#cbd5e1)}
+  #jpBackHome button{font-weight:800;border-radius:9px;background:var(--control-bg,#edf3ff);
+    color:var(--control-fg,#08203a);border:1px solid var(--outline,#cbd5e1)}
+  #jpBackHome strong{font-size:13px;color:var(--muted,#475569)}
+  #jpFrontPage button:focus-visible,#jpBackHome button:focus-visible{outline:3px solid var(--ring,#2f76d2);outline-offset:3px}
+  @media(max-width:840px){#jpFrontPage .jp-home-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    #jpFrontPage{margin-top:12px}
+    #jpFrontPage .jp-landing-hero{border-radius:15px;padding:20px 16px}
+    #jpFrontPage .jp-entry-buttons{flex-direction:column}
+    #jpFrontPage .jp-entry-button{width:100%;min-height:49px}
+    #jpFrontPage .jp-home-card{padding:12px}
+    #jpFrontPage .jp-slide-viewport{min-height:200px;aspect-ratio:4/3}
+  }
+  @media(prefers-reduced-motion:reduce){#jpFrontPage .jp-entry-button:hover{transform:none}}
+</style>
+
 </head>
-<body>
+<body class="jp-home-view">
 
 <!-- JP Astro Research - Start Information -->
 <div id="jpStartInfo" role="dialog" aria-modal="true" aria-labelledby="jpStartInfoTitle" style="display:none;">
@@ -6304,6 +6387,49 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
     </div>
 
   </header>
+
+
+<!-- HOME PAGE: slideshow and research writings are managed by home-content.json. -->
+<main id="jpFrontPage" aria-label="JP's Astro Research முகப்புப் பக்கம்">
+  <section class="jp-landing-hero">
+    <p class="jp-kicker">JP’s Astro Research · ஜோதிட ஆய்வுகள்</p>
+    <h1>JP’s Astro Research</h1>
+    <p class="jp-landing-sub">ஜோதிட ஆய்வுகள், அனுபவங்கள் மற்றும் ஜாதகக் கணக்கீடுகள்.<br>Astrology research, experiences and horoscope calculations.</p>
+    <div class="jp-entry-buttons">
+      <button type="button" id="jpStartJathagam" class="jp-entry-button">✨ ஜாதகம் கணக்கிடு / Calculate Horoscope</button>
+      <button type="button" id="jpOpenSavedJathagam" class="jp-entry-button">📂 சேமித்த ஜாதகம் திறக்க / Saved Horoscopes</button>
+    </div>
+  </section>
+  <div class="jp-home-grid">
+    <section class="jp-home-card" aria-labelledby="jpSlideHeading">
+      <div class="jp-home-heading"><h2 id="jpSlideHeading">🖼️ புகைப்படத் தொகுப்பு</h2><small>படங்கள் / Gallery</small></div>
+      <div class="jp-slide-viewport" id="jpSlideViewport" aria-live="off">
+        <img id="jpHomeSlideImage" src="jp-astro-research-logo.png" alt="JP's Astro Research" loading="eager" />
+        <div id="jpSlidePlaceholder" class="jp-slide-placeholder" hidden>படங்கள் விரைவில் சேர்க்கப்படும்.</div>
+        <div class="jp-slide-overlay" id="jpSlideOverlay"><strong id="jpSlideTitle">JP’s Astro Research</strong><span id="jpSlideCaption">ஜோதிட ஆய்வுகள்</span></div>
+      </div>
+      <div class="jp-slide-controls">
+        <button type="button" id="jpSlidePrev" aria-label="Previous image">❮</button>
+        <span id="jpSlideCount" role="status">1 / 1</span>
+        <button type="button" id="jpSlideNext" aria-label="Next image">❯</button>
+      </div>
+    </section>
+    <section class="jp-home-card" aria-labelledby="jpThoughtsHeading">
+      <div class="jp-home-heading"><h2 id="jpThoughtsHeading">✍️ எனது சிந்தனைகள் &amp; அனுபவங்கள்</h2><small>Writings / Research</small></div>
+      <div id="jpHomeWritings" class="jp-post-list" aria-live="polite">
+        <p class="jp-post-placeholder">எனது ஜோதிட ஆய்வுகள், சிந்தனைகள் மற்றும் அனுபவங்களை இங்கே பகிரவிருக்கிறேன்.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="jpBackHome">
+  <button type="button" id="jpGoHome">← முகப்புப் பக்கம் / Home</button>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <button type="button" id="jpInfoButton" title="ஜாதகம் கணக்கிடும் முறை">ⓘ வழிமுறை</button>
+    <strong>ஜாதகம் / Horoscope</strong>
+  </div>
+</div>
 
   <!-- Public Android APK release notice: intentionally separate from astrology calculations. -->
   <section id="jpApkBanner" aria-label="JP's Astro Research Android application">
@@ -6633,6 +6759,8 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
 </section>
 
   </section>
+  <!-- Horoscope panels are hidden until a calculation or saved-profile load. -->
+  <div id="jpHoroscopeResults" hidden>
   <!-- Planets table (hidden until API) -->
   <section class="card" id="planetsCard" style="display:none;">
     <table id="planetsDmsTable" style="margin-top:10px">
@@ -6895,6 +7023,8 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
   </div>
 </section>
   
+
+</div><!-- /jpHoroscopeResults -->
 
 </div>
 
@@ -12398,6 +12528,7 @@ function placeMoonSymbolToPada(globalPada){ document.querySelectorAll('.moon-pad
         renderAll(new Date(`${dob}T${tob}`));
       }catch(e){ console.warn('Final Jathagam render:',e); }
 
+      window.jpShowHoroscopeResults?.();
       alert(LANG==='ta'?'ஜாதகம் தயாராகிவிட்டது.':'Jathagam is ready.');
     }catch(err){
       console.error('New Jathagam calculation failed:',err);
@@ -12413,7 +12544,7 @@ function placeMoonSymbolToPada(globalPada){ document.querySelectorAll('.moon-pad
 })();
 
 /* ===== Run & Save ===== */
-btnRun.addEventListener('click', async ()=>{ await run(); });
+btnRun.addEventListener('click', async ()=>{ await run(); if(typeof vimData !== 'undefined' && vimData) window.jpShowHoroscopeResults?.(); });
 async function run(){
   mode='current';
 
@@ -14835,11 +14966,7 @@ document.addEventListener('click', ()=>{
 });
 
 </script>
-
-
-
-
-\n<script>
+<script>
 /* ===== DASA DEGREE → PLANET MEETING : STAR-FAMILY MODEL =====
    User rule:
    - Dasa order starts from the birth Moon's Nakshatra lord.
@@ -15265,7 +15392,6 @@ document.addEventListener('click', ()=>{
   window.renderPuthiPlanetMeetings=renderPuthi;
 })();
 </script>
-\n
 <script>
 /* =========================================================
    FINAL ALP RASI / PADA CYCLE CORRECTION
@@ -15775,8 +15901,8 @@ document.addEventListener('click', ()=>{
       }
     });
 
-    // Show after the 5-second opening logo promotion.
-    setTimeout(showInfo, 5100);
+    // Intro popup is opt-in from the horoscope form, not automatic on the public home page.
+    document.getElementById('jpInfoButton')?.addEventListener('click', showInfo);
   }
 
   if(document.readyState === 'loading'){
@@ -16357,7 +16483,7 @@ document.getElementById('caldate')?.addEventListener('change',()=>{
           if(window.__jpAuth?.currentUser&&typeof jp_cloudLoadProfile==='function')payload=await jp_cloudLoadProfile(name);else payload=jp_loadProfiles()[name];
           if(!payload){alert(LANG==='ta'?'ஜாதக தகவல் கிடைக்கவில்லை.':'Profile not found.');return;}
           if(document.getElementById('profileName'))document.getElementById('profileName').value=name;
-          closeProfileModal();jp_applyPayload(payload);
+          closeProfileModal();jp_applyPayload(payload);window.jpShowHoroscopeResults?.();
         }catch(e){console.error(e);alert('Load failed: '+(e?.message||e));}
       });
       listBox.appendChild(b);
@@ -19838,6 +19964,165 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
   window.jpComputeKuberaPulli=compute;
   window.jpApplyKuberaPulli=activate;
   window.jpClearKuberaPulli=deactivate;
+})();
+</script>
+
+
+<script id="jp-public-homepage-controller">
+(function(){
+  'use strict';
+  if(window.__jpPublicHomepageBound) return;
+  window.__jpPublicHomepageBound=true;
+  var body=document.body;
+  var form=document.getElementById('apiFormWrap');
+  var formWrap=document.getElementById('jpHoroscopeResults');
+  var hero=document.getElementById('jpFrontPage');
+  var start=document.getElementById('jpStartJathagam');
+  var saved=document.getElementById('jpOpenSavedJathagam');
+  var back=document.getElementById('jpGoHome');
+
+  function openForm(){
+    body.classList.remove('jp-home-view','jp-results-ready');
+    body.classList.add('jp-horoscope-view');
+    if(formWrap)formWrap.hidden=true;
+    window.scrollTo({top:0,behavior:'auto'});
+    // Do not force keyboard open on mobile; the user can tap a field.
+  }
+  function showResults(){
+    body.classList.remove('jp-home-view');
+    body.classList.add('jp-horoscope-view','jp-results-ready');
+    if(formWrap)formWrap.hidden=false;
+    // Leave the input form available for revisions and saved profiles.
+  }
+  function goHome(){
+    body.classList.remove('jp-horoscope-view','jp-results-ready');
+    body.classList.add('jp-home-view');
+    if(formWrap)formWrap.hidden=true;
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+  window.jpShowHoroscopeResults=showResults;
+  window.jpOpenHoroscopeForm=openForm;
+  window.jpGoPublicHome=goHome;
+  start?.addEventListener('click',openForm);
+  saved?.addEventListener('click',function(){
+    // Reuse the existing saved-profile list and its Firestore/localStorage logic.
+    document.getElementById('btnOpenProfile')?.click();
+  });
+  back?.addEventListener('click',goHome);
+
+  // Public content configuration. To publish from your phone, edit
+  // home-content.json in GitHub and upload images into home-images/.
+  var slides=[{src:'jp-astro-research-logo.png', title:'JP’s Astro Research',caption:'ஜோதிட ஆய்வுகள்'}];
+  var slideIndex=0;
+  var slideTimer=null;
+  var image=document.getElementById('jpHomeSlideImage');
+  var title=document.getElementById('jpSlideTitle');
+  var caption=document.getElementById('jpSlideCaption');
+  var counter=document.getElementById('jpSlideCount');
+  var placeholder=document.getElementById('jpSlidePlaceholder');
+  var viewport=document.getElementById('jpSlideViewport');
+  var previous=document.getElementById('jpSlidePrev');
+  var next=document.getElementById('jpSlideNext');
+  var postsRoot=document.getElementById('jpHomeWritings');
+
+  function safeImagePath(path){
+    if(typeof path!=='string' || !path.trim()) return '';
+    try{
+      var u=new URL(path.trim(),document.baseURI);
+      // Limit to same-site images; do not accept javascript: or remote redirects.
+      return u.origin===location.origin && /\.(png|jpe?g|gif|webp|avif)(?:$|\?)/i.test(u.pathname)
+        ? u.href : '';
+    }catch(e){return ''}
+  }
+  function renderSlide(){
+    if(!image)return;
+    var s=slides[slideIndex]||{};
+    var src=safeImagePath(s.src);
+    image.hidden=!src;
+    if(src){image.src=src;image.alt=String(s.title||'JP’s Astro Research photo');}
+    if(placeholder)placeholder.hidden=!!src;
+    if(title)title.textContent=String(s.title||'');
+    if(caption)caption.textContent=String(s.caption||'');
+    if(counter)counter.textContent=(slides.length?(slideIndex+1):0)+' / '+slides.length;
+    if(previous)previous.disabled=slides.length<2;
+    if(next)next.disabled=slides.length<2;
+  }
+  image?.addEventListener('error',function(){
+    image.hidden=true;
+    if(placeholder){placeholder.hidden=false;placeholder.textContent='படம் கிடைக்கவில்லை. கோப்பின் பெயரை சரிபார்க்கவும்.';}
+  });
+  function moveSlide(direction){
+    if(slides.length<2)return;
+    slideIndex=(slideIndex+direction+slides.length)%slides.length;
+    renderSlide();
+    restartTimer();
+  }
+  function stopTimer(){if(slideTimer){clearInterval(slideTimer);slideTimer=null}}
+  function startTimer(){
+    if(slides.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      slideTimer=setInterval(function(){
+        // Pause when this section is offscreen, or the user is viewing a chart.
+        if(!body.classList.contains('jp-home-view') || document.hidden)return;
+        slideIndex=(slideIndex+1)%slides.length;
+        renderSlide();
+      },5200);
+    }
+  }
+  function restartTimer(){stopTimer();startTimer()}
+  previous?.addEventListener('click',function(){moveSlide(-1)});
+  next?.addEventListener('click',function(){moveSlide(1)});
+  viewport?.addEventListener('mouseenter',stopTimer);
+  viewport?.addEventListener('mouseleave',restartTimer);
+  viewport?.addEventListener('focusin',stopTimer);
+  viewport?.addEventListener('focusout',restartTimer);
+  var swipeX=null;
+  viewport?.addEventListener('touchstart',function(e){swipeX=e.changedTouches[0]?.screenX??null},{passive:true});
+  viewport?.addEventListener('touchend',function(e){
+    if(swipeX===null)return;
+    var distance=(e.changedTouches[0]?.screenX??swipeX)-swipeX;
+    if(Math.abs(distance)>45)moveSlide(distance<0?1:-1);
+    swipeX=null;
+  },{passive:true});
+  function renderPosts(posts){
+    if(!postsRoot)return;
+    postsRoot.replaceChildren();
+    if(!posts.length){
+      var empty=document.createElement('p');empty.className='jp-post-placeholder';
+      empty.textContent='எனது ஜோதிட ஆய்வுகள், சிந்தனைகள் மற்றும் அனுபவங்களை இங்கே பகிரவிருக்கிறேன்.';
+      postsRoot.appendChild(empty);return;
+    }
+    posts.forEach(function(post){
+      var article=document.createElement('article');article.className='jp-post';
+      var h=document.createElement('h3');h.textContent=String(post.title||'ஜோதிட ஆய்வு');
+      article.appendChild(h);
+      if(post.date){var time=document.createElement('time');time.textContent=String(post.date);article.appendChild(time)}
+      if(post.image){
+        var photoSrc=safeImagePath(post.image);
+        if(photoSrc){var photo=document.createElement('img');photo.className='jp-post-image';photo.src=photoSrc;photo.loading='lazy';photo.alt=String(post.title||'Research photo');article.appendChild(photo)}
+      }
+      var p=document.createElement('p');p.textContent=String(post.body||'');
+      article.appendChild(p);postsRoot.appendChild(article);
+    });
+  }
+  renderSlide();
+  if(typeof fetch==='function'){
+    fetch('./home-content.json',{cache:'no-cache'})
+      .then(function(response){if(!response.ok)throw Error('home-content.json unavailable');return response.json()})
+      .then(function(data){
+        if(Array.isArray(data.slides)){
+          var valid=data.slides.filter(function(s){return s&&safeImagePath(s.src)}).slice(0,30);
+          if(valid.length)slides=valid;
+        }
+        renderSlide();restartTimer();
+        if(Array.isArray(data.writings)){
+          renderPosts(data.writings.filter(function(p){return p&&typeof p==='object'}).slice(0,100));
+        }
+      })
+      .catch(function(){
+        // Website still functions when JSON is not yet uploaded.
+        renderSlide();restartTimer();
+      });
+  }
 })();
 </script>
 
