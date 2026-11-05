@@ -1,0 +1,49 @@
+
+{
+  "slides": [
+    {
+      "src": "home-images/photo1.jpeg",
+      "title": "குலதெய்வம்",
+      "caption": "JP's Astro Research"
+    },
+    {
+      "src": "home-images/photo2.jpeg",
+      "title": "மூன்று தலைமுறை",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    },
+    {
+      "src": "home-images/photo3.jpeg",
+      "title": "நவ கிரகங்கள் ",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    },
+    {
+      "src": "home-images/photo4.jpeg",
+      "title": "நவ கிரகங்கள் ",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    },
+    {
+      "src": "home-images/photo5.jpeg",
+      "title": "பன்னிரண்டு பாவங்கள் ",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    },
+    {
+      "src": "home-images/photo6.jpeg",
+      "title": "App Features",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    },
+    {
+      "src": "home-images/photo7.jpeg",
+      "title": "App Prices ",
+      "caption": "ஜோதிட ஆராய்ச்சி"
+    }
+  ],
+  "writings": [
+    {
+      "title": "எனது ஜோதிட அனுபவம்",
+      "date": "2026-11-05",
+      "image": "home-images/research.jpg",
+      "body": "தினசரி சந்திரனை வைத்து நமது கொடுப்பினையை அறிந்து கொள்ளுங்கள்.. திதிசூன்ய ராசி எப்படி வேலை செய்கிறது என்பதை அறிந்து கொள்ளுங்கள் 
+நடப்பு திசை/புத்தி/அந்தரம்.  மற்றும் கோட்சார கிரகங்கள் எப்படி நம்மை அழைத்து செல்கிறது என்பதை  ஆராய்ந்து பாருங்கள்.. உங்கள் வாழ்க்கை உங்கள் கையில்.... அறிவோம் தெளிவோம்.  அன்புடன் JP's Astro Research."
+    }
+  ]
+}
