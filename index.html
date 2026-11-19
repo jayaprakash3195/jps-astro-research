@@ -3,7 +3,7 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=1280">
 
 <title>Jps Astro Research </title>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -6278,6 +6278,120 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
   @media(prefers-reduced-motion:reduce){#jpFrontPage .jp-entry-button:hover{transform:none}}
 </style>
 
+
+<!-- Homepage colour + desktop-only layout. Scoped to new public-facing components. -->
+<style id="jp-nov2026-home-upgrade">
+  /* The customer requested the desktop layout on all devices. */
+  html, body { min-width:1280px !important; }
+  #app.container { min-width:1280px; }
+  #jpFrontPage { isolation:isolate; }
+  #jpFrontPage .jp-landing-hero {
+    padding:42px 48px 46px;
+    background:radial-gradient(ellipse at 83% 16%,rgba(253,200,90,.22),transparent 30%),
+               radial-gradient(ellipse at 12% 86%,rgba(75,224,204,.25),transparent 34%),
+               linear-gradient(118deg,#171b55 0%,#352f89 35%,#16569c 68%,#086b66 100%);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 16px 40px rgba(26,37,97,.2);
+  }
+  #jpFrontPage .jp-landing-hero::after {content:"✦ ✧";right:34px;top:0;font-size:175px;opacity:.1;white-space:nowrap}
+  #jpFrontPage .jp-kicker {color:#ffdb86;letter-spacing:.16em;font-size:13px}
+  #jpFrontPage .jp-landing-sub {font-size:17px;color:#eef7ff}
+  #jpFrontPage .jp-entry-button {border:0;box-shadow:0 7px 18px rgba(8,22,64,.25);transition:transform .16s,box-shadow .16s}
+  #jpFrontPage #jpStartJathagam {background:linear-gradient(110deg,#ffe697,#fff9e0);color:#283267;font-weight:900}
+  #jpFrontPage #jpStartJathagam:hover {box-shadow:0 10px 24px rgba(9,21,62,.34)}
+  #jpFrontPage .jp-home-grid {gap:22px;margin-top:24px}
+  #jpFrontPage .jp-home-card {padding:21px 24px 24px;border:1px solid rgba(92,107,188,.2);border-radius:22px;
+      background:linear-gradient(145deg,rgba(255,255,255,.99),rgba(247,250,255,.98));
+      box-shadow:0 8px 28px rgba(32,49,118,.10)}
+  #jpFrontPage .jp-home-card:nth-child(2) {background:linear-gradient(150deg,#ffffff,#f9f6ff)}
+  #jpFrontPage .jp-home-heading {align-items:center;border-bottom:1px solid #e7e9f6;padding-bottom:14px;margin-bottom:16px}
+  #jpFrontPage .jp-home-heading h2 {font-size:23px;color:#2a3182}
+  #jpFrontPage .jp-home-heading small {color:#586798;font-weight:700}
+  #jpFrontPage .jp-slide-viewport {min-height:480px;border-radius:17px;
+      background:linear-gradient(125deg,#f1f1ff,#e7f8f5);border:1px solid #d8dffa}
+  #jpFrontPage .jp-slide-overlay {padding:60px 25px 19px;background:linear-gradient(transparent,rgba(16,24,65,.83))}
+  #jpFrontPage .jp-slide-overlay strong {font-size:22px}
+  #jpFrontPage .jp-slide-overlay span {font-size:14px}
+  #jpFrontPage .jp-slide-controls button {border-radius:12px;background:linear-gradient(115deg,#e2e8ff,#e5faf3);
+      border:1px solid #d0d9f5;color:#252e72;font-weight:900;font-size:19px}
+  #jpFrontPage #jpSlideCount {font-size:14px;font-weight:800;color:#525d92}
+  #jpFrontPage .jp-post {border-radius:15px;padding:22px 24px;border-left:5px solid #7775e7;
+      background:linear-gradient(110deg,#ffffff,#f9f8ff);box-shadow:0 3px 16px rgba(30,44,112,.06)}
+  #jpFrontPage .jp-post h3 {font-size:19px;color:#353c98}
+  #jpFrontPage .jp-post p {font-size:16px;color:#273451;line-height:1.95}
+  body.dark #jpFrontPage .jp-home-card {background:linear-gradient(145deg,#141c32,#101c2b);border-color:#304365}
+  body.dark #jpFrontPage .jp-home-card:nth-child(2) {background:linear-gradient(145deg,#1c1935,#121a2e)}
+  body.dark #jpFrontPage .jp-home-heading {border-bottom-color:#34405a}
+  body.dark #jpFrontPage .jp-home-heading h2 {color:#c7c9ff}
+  body.dark #jpFrontPage .jp-home-heading small {color:#a4b7d3}
+  body.dark #jpFrontPage .jp-post {background:#19213c;border-color:#7775e7}
+  body.dark #jpFrontPage .jp-post h3 {color:#c6caff}
+  body.dark #jpFrontPage .jp-post p {color:#e1eaf9}
+  body.dark #jpFrontPage .jp-slide-controls button {background:#273457;color:#e3ebff;border-color:#4a5382}
+  /* Enquiry card – only this new module is styled; existing horoscope controls are untouched. */
+  #jpFrontPage #jpCustomerEnquiry {background:linear-gradient(128deg,#f9fcff 0%,#f5f2ff 55%,#f5fcf9 100%);
+      border:1px solid #dbe0fa;box-shadow:0 10px 30px rgba(49,57,136,.11)}
+  #jpFrontPage #jpCustomerEnquiry .jp-enquiry-intro {display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:center;
+      padding:20px 24px;background:linear-gradient(112deg,#23358b,#5362bb 62%,#148f8d);border-radius:17px;color:#fff;margin-bottom:24px}
+  #jpFrontPage #jpCustomerEnquiry .jp-enquiry-intro h3 {font-size:24px;margin:0 0 8px;color:white}
+  #jpFrontPage #jpCustomerEnquiry .jp-enquiry-intro p {font-size:15px;line-height:1.75;margin:0;color:#f1f5ff}
+  #jpFrontPage .jp-enquiry-mini {padding:15px 18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);
+      border-radius:13px;text-align:center;font-weight:800;letter-spacing:.01em}
+  #jpFrontPage .jp-enquiry-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 20px}
+  #jpFrontPage .jp-enquiry-field {display:flex;flex-direction:column;gap:7px;min-width:0}
+  #jpFrontPage .jp-enquiry-field label {font-size:14px;color:#344273;font-weight:800}
+  #jpFrontPage .jp-enquiry-field input,#jpFrontPage .jp-enquiry-field textarea {
+    box-sizing:border-box;width:100%;margin:0;border:1.5px solid #d1d9ef;border-radius:12px;
+    padding:13px 14px;font:15px/1.45 system-ui,'Latha',sans-serif;color:#18244a;background:#fff;
+    box-shadow:inset 0 1px 3px rgba(16,31,78,.03)}
+  #jpFrontPage .jp-enquiry-field input:focus,#jpFrontPage .jp-enquiry-field textarea:focus {
+    border-color:#6459e6;outline:3px solid rgba(102,88,238,.18)}
+  #jpFrontPage .jp-enquiry-field textarea {min-height:120px;resize:vertical}
+  #jpFrontPage .jp-enquiry-field.jp-span-3 {grid-column:1 / -1}
+  #jpFrontPage .jp-enquiry-consent {display:flex;gap:10px;align-items:flex-start;margin-top:18px;
+      font-size:13px;line-height:1.6;color:#485876}
+  #jpFrontPage .jp-enquiry-consent input {width:17px;height:17px;margin-top:2px;accent-color:#4745c4;flex:0 0 auto}
+  #jpFrontPage .jp-enquiry-actions {display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px}
+  #jpFrontPage #jpEnquirySubmit {font:800 15px system-ui,'Latha',sans-serif;background:linear-gradient(115deg,#4b41c9,#2d8b9c);
+      color:#fff;border:0;border-radius:12px;padding:14px 27px;cursor:pointer;box-shadow:0 7px 19px rgba(55,61,153,.21)}
+  #jpFrontPage #jpEnquirySubmit:disabled {opacity:.65;cursor:wait}
+  #jpFrontPage #jpEnquiryStatus {font-size:14px;font-weight:700;line-height:1.65;color:#3a4778;max-width:700px}
+  #jpFrontPage .jp-enquiry-note {margin:18px 0 0;color:#65708c;font-size:12px;line-height:1.6}
+  body.dark #jpFrontPage #jpCustomerEnquiry {background:#111e2f;border-color:#374b73}
+  body.dark #jpFrontPage .jp-enquiry-field label {color:#dae0ff}
+  body.dark #jpFrontPage .jp-enquiry-field input,body.dark #jpFrontPage .jp-enquiry-field textarea {
+    background:#17243b;border-color:#3b4969;color:#e2eaff}
+  body.dark #jpFrontPage .jp-enquiry-consent,body.dark #jpFrontPage .jp-enquiry-note {color:#afc1dd}
+  body.dark #jpFrontPage #jpEnquiryStatus {color:#dbe4ff}
+  /* Public contact footer */
+  #jpContactFooter {width:calc(100% - 32px);max-width:1280px;box-sizing:border-box;border-radius:23px;margin:26px auto;padding:30px 31px;
+    background:radial-gradient(ellipse at 83% 0%,rgba(102,93,224,.32),transparent 36%),
+               linear-gradient(115deg,#101c4a 0%,#1b2b63 54%,#0f5261 100%);
+    color:#eef6ff;border:1px solid rgba(255,255,255,.13);box-shadow:0 14px 30px rgba(13,37,82,.16)}
+  #jpContactFooter h2 {color:#fff;font-size:22px;margin:0 0 4px}
+  #jpContactFooter p {font-size:14px;color:#c9dcf1;margin:0 0 20px}
+  #jpContactFooter .jp-social-row {display:flex;flex-wrap:wrap;gap:13px}
+  #jpContactFooter .jp-social-link {font-size:14px;display:inline-flex;align-items:center;gap:10px;
+    border-radius:13px;padding:11px 16px;color:#fff;text-decoration:none;font-weight:850;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);min-width:156px;
+    transition:transform .16s,background .16s}
+  #jpContactFooter .jp-social-link[href]:hover {transform:translateY(-2px);background:rgba(255,255,255,.21)}
+  #jpContactFooter .jp-social-link[aria-disabled="true"] {opacity:.57;cursor:not-allowed}
+  #jpContactFooter .jp-social-icon {display:inline-grid;place-items:center;width:29px;height:29px;border-radius:9px;
+    color:#fff;font-size:13px;font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.15)}
+  #jpContactFooter .jp-social-facebook .jp-social-icon {background:#1977f2}
+  #jpContactFooter .jp-social-instagram .jp-social-icon {background:linear-gradient(135deg,#7b35dd,#e2388e,#f5a53a)}
+  #jpContactFooter .jp-social-youtube .jp-social-icon {background:#e8213e}
+  #jpContactFooter .jp-social-email .jp-social-icon {background:#31a3d6}
+  #jpContactFooter .jp-social-whatsapp .jp-social-icon {background:#20b66a}
+  #jpContactFooter .jp-social-icon svg {display:block;width:21px;height:21px}
+  #jpContactFooter .jp-social-email .jp-social-icon {background:#fff;color:#232a36}
+  #jpContactFooter .jp-social-link {min-width:152px;gap:9px;letter-spacing:.1px}
+  #jpContactFooter .jp-footer-end {margin-top:20px;padding-top:15px;border-top:1px solid rgba(255,255,255,.2);
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:#cfdfed}
+  #jpContactFooter .jp-footer-end a {color:#e7dcff;text-decoration:underline}
+</style>
+
 </head>
 <body class="jp-home-view">
 
@@ -6368,20 +6482,6 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
 </a>
 
 
-      <a id="btnWhatsApp"
-   href="https://wa.me/917708805214?text=Hi%20JP%2C%20I%20need%20help%20with%20JP%27s%20Astro%20Research."
-   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <!-- WhatsApp logo (inline SVG) -->
-  <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-    <!-- outer green circle -->
-    <circle cx="12" cy="12" r="11" fill="#25D366"/>
-    <!-- white chat bubble -->
-    <path fill="#FFFFFF" d="M6.9 18.2l.9-3.1a6.7 6.7 0 111.9 1.9l-2.8 1.2z"/>
-    <!-- green handset inside bubble -->
-    <path fill="#25D366" d="M12.7 8.6l1 1.2c.1.2.1.4-.1.6l-.5.5c-.2.2-.2.4-.1.6.3.6.8 1.1 1.4 1.4.2.1.4.1.6-.1l.5-.5c.2-.2.4-.2.6-.1l1.2 1c.2.1.3.3.3.5-.1.6-.5 1.1-1 1.4-.5.3-1.1.4-1.7.2-1.5-.5-2.9-1.8-3.8-3.2-.4-.7-.7-1.4-.8-2.1 0-.6.2-1.2.6-1.6.3-.4.8-.8 1.4-1 .2-.1.4 0 .5.2z"/>
-  </svg>
-  <span class="label">WhatsApp</span>
-</a>
 
     </div>
 
@@ -6419,6 +6519,48 @@ body.dark #current .jp-summary-anth .jp-summary-degree{color:#fbbf24;}
       </div>
     </section>
   </div>
+
+    <!-- PUBLIC CUSTOMER ENQUIRY (kept separate from birth-chart calculations) -->
+    <section id="jpCustomerEnquiry" class="jp-home-card" aria-labelledby="jpEnquiryHeading" style="margin-top:22px">
+      <div class="jp-home-heading"><h2 id="jpEnquiryHeading">✉️ ஜோதிட ஆலோசனை / வாடிக்கையாளர் விசாரணை</h2><small>Customer Enquiry</small></div>
+      <div class="jp-enquiry-intro">
+        <div>
+          <h3>உங்கள் ஜாதகம் பற்றிய கேள்விகளை அனுப்புங்கள்</h3>
+          <p>JP’s Astro Research — தமிழ் ஜோதிடம், KP முறை, தசா–புத்தி மற்றும் நட்சத்திரப் பாத ஆய்வுகளுக்கான ஆலோசனை விசாரணைகள் வரவேற்கப்படுகின்றன.</p>
+        </div>
+        <div class="jp-enquiry-mini">📞 7708805214<br><small>Astrology consultation enquiries</small></div>
+      </div>
+      <form id="jpCustomerEnquiryForm" autocomplete="on" novalidate>
+        <div class="jp-enquiry-grid">
+          <div class="jp-enquiry-field"><label for="jpEnquiryName">பெயர் / Name *</label>
+            <input id="jpEnquiryName" type="text" name="customerName" maxlength="120" placeholder="உங்கள் பெயர்" autocomplete="name" required></div>
+          <div class="jp-enquiry-field"><label for="jpEnquiryMobile">WhatsApp / மொபைல் எண் *</label>
+            <input id="jpEnquiryMobile" type="tel" name="whatsapp" inputmode="tel" maxlength="18" placeholder="10-digit mobile number" autocomplete="tel" required></div>
+          <div class="jp-enquiry-field"><label for="jpEnquiryDob">பிறந்த தேதி / Date of Birth *</label>
+            <input id="jpEnquiryDob" type="date" name="dob" required></div>
+          <div class="jp-enquiry-field"><label for="jpEnquiryTob">பிறந்த நேரம் / Time of Birth *</label>
+            <input id="jpEnquiryTob" type="time" name="tob" required></div>
+          <div class="jp-enquiry-field jp-span-3"><label for="jpEnquiryPob">பிறந்த இடம் / Place of Birth *</label>
+            <input id="jpEnquiryPob" type="text" name="pob" maxlength="200" placeholder="ஊர், மாவட்டம், மாநிலம்" required></div>
+          <div class="jp-enquiry-field jp-span-3"><label for="jpEnquiryQuestion">உங்கள் கேள்வி / Your Question *</label>
+            <textarea id="jpEnquiryQuestion" name="question" maxlength="2500" rows="4" placeholder="உங்கள் கேள்வியை இங்கே எழுதுங்கள்..." required></textarea></div>
+        </div>
+        <div class="jp-enquiry-field" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <label for="jpEnquiryWebsite">Leave blank</label><input id="jpEnquiryWebsite" type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <label class="jp-enquiry-consent">
+          <input type="checkbox" name="consent" value="yes" required>
+          <span>ஆலோசனை விசாரணைக்காக எனது தொடர்பு விவரங்களையும் பிறப்பு விவரங்களையும் JP’s Astro Research-க்கு அனுப்ப நான் ஒப்புக்கொள்கிறேன். / I consent to sharing these details for this enquiry.</span>
+        </label>
+        <div class="jp-enquiry-actions">
+          <button id="jpEnquirySubmit" type="submit">📨 விசாரணையை அனுப்புக / Submit Enquiry</button>
+          <span id="jpEnquiryStatus" role="status" aria-live="polite"></span>
+        </div>
+        <p class="jp-enquiry-note">🔒 உங்கள் விசாரணைகள் பொது இணையப் பக்கத்தில் காட்டப்படாது. Google Sheets பதிவை இணைய உலாவியால் உறுதிப்படுத்த முடியாததால், பதில் வராவிட்டால் WhatsApp மூலம் தொடர்புகொள்ளுங்கள்.</p>
+      </form>
+    </section>
+
+
 </main>
 
 <div id="jpBackHome">
@@ -19966,6 +20108,115 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
 </script>
 
 
+
+<!--
+  SOCIAL LINKS: Facebook, Instagram, YouTube, Gmail and WhatsApp are configured
+  below using the owner-confirmed handles/contact details. A `social` object in
+  home-content.json can override them in future; existing images and writings remain.
+  CUSTOMER ENQUIRIES: sent to the owner's supplied Google Apps Script Web App.
+  For secure Excel-style management, inspect the linked Google Sheet.
+  The public site intentionally does not expose all enquiries or the Sheet URL.
+  Keep the existing astrology code and save/load scripts unchanged.
+-->
+
+<script id="jp-enquiry-social-script">
+(function(){
+  'use strict';
+  // Existing Apps Script endpoint provided by the website owner; no spreadsheet data is public.
+  var GOOGLE_SHEETS_ENQUIRY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzcOnscdiNCiuX-5xInzcCzwEWHiTOqMCrzFRnR7hVIcsUPjY4kMigv1avf_8yYd_uW/exec';
+  var form=document.getElementById('jpCustomerEnquiryForm');
+  var status=document.getElementById('jpEnquiryStatus');
+  var submit=document.getElementById('jpEnquirySubmit');
+  var mobile=document.getElementById('jpEnquiryMobile');
+  if(form && status && submit){
+    form.addEventListener('submit',async function(event){
+      event.preventDefault();
+      if(!form.reportValidity())return;
+      if(form.elements.website && form.elements.website.value.trim())return; // honeypot
+      var number=(mobile && mobile.value || '').replace(/\D/g,'');
+      if(number.length!==10 && !(number.length===12 && number.startsWith('91'))){
+        status.textContent='⚠️ சரியான 10 இலக்க WhatsApp எண்ணை வழங்கவும்.';
+        mobile.focus();return;
+      }
+      submit.disabled=true;
+      status.textContent='உங்கள் கோரிக்கையை அனுப்ப முயற்சி செய்கிறது…';
+      try{
+        // Apps Script endpoints often cannot expose readable CORS responses to GitHub Pages.
+        // no-cors can send the POST, but cannot tell us whether the sheet accepted it.
+        var formData=new FormData(form);
+        formData.append('source','jpsastro.in');
+        await fetch(GOOGLE_SHEETS_ENQUIRY_ENDPOINT,{method:'POST',mode:'no-cors',body:formData});
+        status.textContent='📨 கோரிக்கை அனுப்பப்பட்டது. Google Sheet-ல் பதிவு செய்யப்பட்டதா என்பதை இங்கே உறுதிசெய்ய முடியாது. பதில் வராவிட்டால் WhatsApp-ல் தொடர்புகொள்ளவும்.';
+        // Intentionally retain form inputs until the owner confirms receipt.
+      }catch(error){
+        status.textContent='❌ இணைய இணைப்பில் சிக்கல். மீண்டும் முயற்சிக்கவும் அல்லது WhatsApp-ல் தொடர்புகொள்ளவும்.';
+      }finally{submit.disabled=false;}
+    });
+  }
+
+  // Public links supplied by site owner; optional social URLs in home-content.json
+  // can override them if the owner updates accounts later.
+  function applySocialLinks(social){
+    social = (social && typeof social==='object' && !Array.isArray(social)) ? social : {};
+    var root=document.getElementById('jpSocialLinks');if(!root)return;
+    // Owner-confirmed public contact links; home-content.json may override any one of them.
+    var defaults={
+      facebook:'https://www.facebook.com/jp.jayaprakash.963',
+      instagram:'https://www.instagram.com/jayaprakash95/',
+      youtube:'https://www.youtube.com/@jpsastro',
+      email:'jayaprakash3195@gmail.com',
+      whatsapp:'7708805214'
+    };
+    var kinds=['facebook','instagram','youtube','email','whatsapp'];
+    var allowedHosts={
+      facebook:['facebook.com','www.facebook.com','m.facebook.com','fb.com','www.fb.com'],
+      instagram:['instagram.com','www.instagram.com'],
+      youtube:['youtube.com','www.youtube.com','m.youtube.com','youtu.be']
+    };
+    kinds.forEach(function(kind){
+      var elem=root.querySelector('[data-social="'+kind+'"]');if(!elem)return;
+      var raw=typeof social[kind]==='string' ? social[kind].trim() : '';
+      if(!raw)raw=defaults[kind] || '';
+      var url='';
+      if(kind==='email'){
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(raw)) url='mailto:'+raw;
+      }else if(kind==='whatsapp'){
+        var digits=raw.replace(/\D/g,'');
+        if(digits.length===10)digits='91'+digits;
+        if(/^\d{11,15}$/.test(digits))url='https://wa.me/'+digits;
+        if(!url)url='https://wa.me/917708805214';
+      }else if(raw){
+        try{
+          var parsed=new URL(raw);
+          if(parsed.protocol==='https:' && allowedHosts[kind].includes(parsed.hostname))url=parsed.href;
+        }catch(ignore){}
+      }
+      var active=!!url;
+      if(elem.tagName.toLowerCase()!==(active?'a':'span')){
+        var replacement=document.createElement(active?'a':'span');
+        replacement.className=elem.className;
+        replacement.dataset.social=kind;
+        replacement.innerHTML=elem.innerHTML; // only fixed, local icon/label markup
+        elem.replaceWith(replacement);elem=replacement;
+      }
+      if(active){
+        elem.href=url;
+        if(kind!=='email'){elem.target='_blank';elem.rel='noopener noreferrer';}
+        elem.removeAttribute('aria-disabled');
+        elem.removeAttribute('title');
+      }else{
+        elem.setAttribute('aria-disabled','true');
+        elem.setAttribute('title','home-content.json இல் சரியான இணைப்பை சேர்க்கவும்');
+      }
+    });
+  }
+  window.jpSetSocialLinks=applySocialLinks;
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){applySocialLinks(null);},{once:true});
+  } else {applySocialLinks(null); }
+})();
+</script>
+
 <script id="jp-public-homepage-controller">
 (function(){
   'use strict';
@@ -20107,6 +20358,7 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
           if(valid.length)slides=valid;
         }
         renderSlide();restartTimer();
+        if(window.jpSetSocialLinks){window.jpSetSocialLinks(data.social);}
         if(Array.isArray(data.writings)){
           renderPosts(data.writings.filter(function(p){return p&&typeof p==='object'}).slice(0,100));
         }
@@ -20166,6 +20418,20 @@ body.dark #rasiChart .line.jp-kubera-pulli-active::after{color:#ffd56a;}
 
   <p>Website: jpsastro.in</p>
 </section>
+<!-- Social footer remains visible at the bottom of the whole site -->
+    <footer id="jpContactFooter" aria-label="JP's Astro Research social links">
+      <h2>எங்களுடன் இணையுங்கள் · Connect with JP’s Astro Research</h2>
+      <p>ஜோதிட ஆய்வுகள், புதிய செய்திகள் மற்றும் ஆலோசனைக்காக தொடர்பில் இருங்கள்.</p>
+      <div class="jp-social-row" id="jpSocialLinks">
+        <a class="jp-social-link jp-social-facebook" data-social="facebook" href="https://www.facebook.com/jp.jayaprakash.963" aria-label="Facebook"><span class="jp-social-icon"><svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="currentColor" d="M13.54 22v-8.25h2.76l.42-3.22h-3.18V8.47c0-.93.26-1.56 1.59-1.56h1.7V4.03A22.4 22.4 0 0 0 14.35 3c-2.47 0-4.16 1.5-4.16 4.26v3.27H7.4v3.22h2.79V22h3.35Z"/></svg></span><span>Facebook</span></a>
+        <a class="jp-social-link jp-social-instagram" data-social="instagram" href="https://www.instagram.com/jayaprakash95/" aria-label="Instagram"><span class="jp-social-icon"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span><span>Instagram</span></a>
+        <a class="jp-social-link jp-social-youtube" data-social="youtube" href="https://www.youtube.com/@jpsastro" aria-label="YouTube"><span class="jp-social-icon"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="5.5" width="21" height="13" rx="4.2"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></span><span>YouTube</span></a>
+        <a class="jp-social-link jp-social-email" data-social="email" href="mailto:jayaprakash3195@gmail.com" aria-label="Gmail"><span class="jp-social-icon"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke-width="3"><path d="M3 19V6l9 7 9-7v13" stroke="#4285F4"/><path d="m3 6 9 7" stroke="#EA4335"/><path d="m12 13 9-7" stroke="#EA4335"/><path d="M3 9V19" stroke="#34A853"/><path d="M21 9V19" stroke="#FBBC05"/></svg></span><span>Gmail</span></a>
+        <a class="jp-social-link jp-social-whatsapp" data-social="whatsapp" href="https://wa.me/917708805214" aria-label="WhatsApp"><span class="jp-social-icon"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 2.6a9.3 9.3 0 0 0-8.2 13.8L2.8 21l4.8-1A9.3 9.3 0 1 0 12 2.6Z"/><path d="M8.5 7.7c-.5 0-.9.6-.9 1.4 0 2.7 3.1 6.1 6 6.6 1 .2 2-.2 2.5-1.2l-2.1-1.2-1 1c-1.5-.7-2.2-1.4-2.8-2.9l.9-1-1.3-2.4c-.2-.2-.6-.3-1.3-.3Z" stroke-width="1.35"/></svg></span><span>WhatsApp</span></a>
+      </div>
+      <div class="jp-footer-end"><span>© JP’s Astro Research · jpsastro.in</span>
+        <span>Contact: 7708805214 · <a href="privacy-policy.html">Privacy Policy</a></span></div>
+    </footer>
 <!-- End Google Verification -->
 
 
