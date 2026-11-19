@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy / தனியுரிமைக் கொள்கை for JP's Astro Research: Google Sign-In, saved horoscopes, Google Drive backup, Firebase, payments and data deletion." />
+  <meta name="robots" content="index,follow" />
+  <title>Privacy Policy | தனியுரிமைக் கொள்கை — JP's Astro Research</title>
+  <link rel="canonical" href="https://jpsastro.in/privacy-policy.html" />
+  <style>
+    :root { color-scheme: light; --ink:#17283e; --muted:#526178; --accent:#a46627; --soft:#fff6e9; --line:#e4e8ee; --bg:#f6f8fb; --paper:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; line-height:1.8; }
+    a { color:#155b9b; text-underline-offset:3px; overflow-wrap:anywhere; }
+    button { font:inherit; }
+    .masthead { background:#142e4e; color:white; padding:20px 22px; }
+    .masthead-inner { max-width:1020px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+    .brand { text-decoration:none; color:white; font-size:1.1rem; font-weight:800; letter-spacing:.01em; }
+    .domain { color:#c7d7e9; font-size:.82rem; }
+    .lang-switch { display:flex; gap:6px; padding:4px; background:#263f60; border-radius:12px; }
+    .lang-switch button { min-width:88px; background:transparent; color:white; border:0; border-radius:8px; padding:7px 12px; cursor:pointer; font-weight:650; }
+    .lang-switch button[aria-pressed="true"] { color:#152a45; background:white; }
+    .container { max-width:1020px; margin:auto; padding:32px 22px 64px; }
+    .intro { border:1px solid var(--line); background:var(--paper); border-radius:18px; padding:28px 30px; margin-bottom:22px; }
+    .eyebrow { color:var(--accent); font-weight:750; font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+    h1 { margin:8px 0; font-size:clamp(1.55rem,3.2vw,2.2rem); line-height:1.35; letter-spacing:-.02em; }
+    .lead { color:var(--muted); margin-top:9px; }
+    .meta { margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; }
+    .tag { border:1px solid #dbe1e9; border-radius:999px; padding:4px 12px; font-size:.82rem; color:#42526a; }
+    .layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:22px; align-items:start; }
+    aside { position:sticky; top:22px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+    aside h2 { margin:0 0 8px; font-size:.92rem; }
+    aside a { display:block; padding:7px 0; font-size:.85rem; color:#485972; text-decoration:none; }
+    aside a:hover, aside a:focus-visible { color:#155b9b; text-decoration:underline; }
+    .main { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:12px 30px 28px; }
+    section { padding:20px 0; border-bottom:1px solid var(--line); scroll-margin-top:16px; }
+    section:last-child { border-bottom:0; }
+    h2 { margin:0 0 9px; font-size:1.15rem; line-height:1.5; }
+    p { margin:8px 0; }
+    ul { padding-left:22px; margin:10px 0; }
+    li { margin:7px 0; }
+    .note { border-left:4px solid var(--accent); background:var(--soft); padding:13px 17px; border-radius:0 10px 10px 0; margin:15px 0; }
+    .contact { background:#eef5ff; border-radius:12px; padding:14px 18px; }
+    .footer { max-width:1020px; margin:auto; padding:0 22px 36px; text-align:center; color:var(--muted); font-size:.86rem; }
+    [data-lang="en"] { display:none; }
+    html[lang="en"] [data-lang="en"] { display:revert; }
+    html[lang="en"] [data-lang="ta"] { display:none; }
+    @media (max-width:750px) { .container { padding:20px 13px 44px; } .layout { grid-template-columns:1fr; } aside { position:static; } .intro { padding:22px 19px; } .main { padding:8px 19px; } .masthead { padding:16px 14px; } }
+    @media print { .masthead,aside,.lang-switch { display:none !important; } .container { max-width:none; padding:0; } .layout { display:block; } .intro,.main { border:0; padding:0; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div><a href="https://jpsastro.in/" class="brand">JP's Astro Research</a><div class="domain">jpsastro.in</div></div>
+    <nav class="lang-switch" aria-label="Language / மொழி">
+      <button id="to-ta" type="button" aria-pressed="true">தமிழ்</button>
+      <button id="to-en" type="button" aria-pressed="false">English</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <div class="intro">
+    <div class="eyebrow">JP's Astro Research · in.jpsastro.research</div>
+    <div data-lang="ta"><h1>தனியுரிமைக் கொள்கை</h1><p class="lead">எங்கள் செயலியில் உங்கள் Google கணக்கு, ஜாதக விவரங்கள், ஆய்வுக் குறிப்புகள் மற்றும் விருப்பத் தேர்வான Google Drive காப்புப்பிரதி எவ்வாறு பயன்படுத்தப்படுகின்றன என்பதற்கான விளக்கம்.</p></div>
+    <div data-lang="en"><h1>Privacy Policy</h1><p class="lead">How JP's Astro Research handles Google account details, horoscope data, research notes, and optional Google Drive backups.</p></div>
+    <div class="meta"><span class="tag"><span data-lang="ta">நடைமுறை தேதி</span><span data-lang="en">Effective date</span>: 19 November 2026</span><span class="tag">Android · Website</span><span class="tag"><span data-lang="ta">சுயாதீன செயலி உருவாக்குநர்</span><span data-lang="en">Independent app developer</span></span></div>
+  </div>
+  <div class="layout">
+    <aside aria-label="Contents">
+      <div data-lang="ta"><h2>உள்ளடக்கம்</h2><a href="#who">1. எங்களைப் பற்றி</a><a href="#collect">2. சேகரிக்கப்படும் தகவல்கள்</a><a href="#usage">3. தகவல்களின் பயன்பாடு</a><a href="#storage">4. சேமிப்பு மற்றும் காப்புப்பிரதி</a><a href="#third-parties">5. வெளிச் சேவைகள்</a><a href="#ads">6. விளம்பரங்கள்</a><a href="#permissions">7. அனுமதிகள்</a><a href="#retention">8. தரவு பாதுகாப்பு / காலம்</a><a href="#rights">9. உங்கள் தேர்வுகள்</a><a href="#deletion">10. கணக்கு மற்றும் தரவு நீக்கம்</a><a href="#children">11. குழந்தைகள்</a><a href="#changes">12. மாற்றங்கள்</a><a href="#contact">13. தொடர்பு</a></div>
+      <div data-lang="en"><h2>Contents</h2><a href="#who">1. About us</a><a href="#collect">2. Data we handle</a><a href="#usage">3. How it is used</a><a href="#storage">4. Storage and backups</a><a href="#third-parties">5. External services</a><a href="#ads">6. Advertising</a><a href="#permissions">7. Permissions</a><a href="#retention">8. Security and retention</a><a href="#rights">9. Your choices</a><a href="#deletion">10. Account and data deletion</a><a href="#children">11. Children</a><a href="#changes">12. Policy updates</a><a href="#contact">13. Contact</a></div>
+    </aside>
+    <article class="main">
+      <section id="who">
+        <div data-lang="ta"><h2>1. எங்களைப் பற்றி</h2><p>JP's Astro Research (Android package: <strong>in.jpsastro.research</strong>) என்பது தனிநபர் உருவாக்கும் ஜோதிடக் கணக்கீடு, பஞ்சாங்கம், ஜாதகப் பதிவு மற்றும் ஆய்வு செயலியாகும். <a href="https://jpsastro.in/">jpsastro.in</a> என்பது அதன் இணையதளம். இந்தக் கொள்கை செயலி மற்றும் தொடர்புடைய சேவைகளுக்குப் பொருந்தும்.</p></div>
+        <div data-lang="en"><h2>1. About us</h2><p>JP's Astro Research (Android package: <strong>in.jpsastro.research</strong>) is an independently developed astrology calculation, Panchangam, horoscope-record and research application. Its website is <a href="https://jpsastro.in/">jpsastro.in</a>. This policy covers the app and related services.</p></div>
+      </section>
+      <section id="collect">
+        <div data-lang="ta"><h2>2. நாங்கள் கையாளும் தகவல்கள்</h2><ul><li><strong>Google உள்நுழைவு:</strong> பெயர், மின்னஞ்சல் முகவரி, Firebase பயனர் ID, Google வழங்கும் அடிப்படை சுயவிவரத் தகவல்கள்.</li><li><strong>ஜாதக மற்றும் ஆய்வுத் தகவல்கள்:</strong> பெயர், பிறந்த தேதி, நேரம், இடம், கிரகக் கணக்கீடுகள், வாழ்க்கை நிகழ்வுகள், ஜாதகர் குறிப்புகள், ஆராய்ச்சி முடிவுகள், தேர்ந்தெடுத்த அமைப்புகள்.</li><li><strong>ஆலோசனை வேண்டுகோள்:</strong> நீங்கள் சமர்ப்பிக்கும் பெயர், தொடர்பு/WhatsApp எண், பிறப்பு விவரங்கள், கேள்விகள் மற்றும் வேண்டுகோள் நிலை.</li><li><strong>அணுகல் / கட்டணம்:</strong> அனுமதி நிலை, வாங்கிய திட்டம், செலுத்தப்பட்ட தொகை தொடர்பான பரிவர்த்தனை அடையாளங்கள் மற்றும் அணுகல் காலம். கட்டண அட்டை விவரங்கள் Razorpay போன்ற கட்டணச் சேவை வழங்குநரால் கையாளப்படுகின்றன.</li><li><strong>அறிவிப்புகள்:</strong> தேர்வு செய்யப்பட்ட அறிவிப்புகள் மற்றும் அவற்றை வழங்கத் தேவையான சாதன push token.</li><li><strong>இடத் தேடல்:</strong> பிறந்த ஊர் அல்லது பஞ்சாங்க இடம் தேடும்போது நீங்கள் உள்ளிடும் இடப் பெயர்கள் / தேர்ந்தெடுக்கப்பட்ட ஆயத்தொலைவுகள்.</li></ul></div>
+        <div data-lang="en"><h2>2. Data we handle</h2><ul><li><strong>Google Sign-In:</strong> name, email address, Firebase user ID and basic profile information supplied by Google.</li><li><strong>Horoscope and research information:</strong> names, birth dates, times and places, calculated planetary data, life events, notes, research outcomes and selected app preferences.</li><li><strong>Consultation requests:</strong> name, contact/WhatsApp number, birth details, questions and consultation status where voluntarily submitted.</li><li><strong>Access and payment:</strong> approval status, purchased plan, transaction references and entitlement period. Payment-card details are handled by payment providers such as Razorpay.</li><li><strong>Notifications:</strong> notification preferences and device push tokens needed to deliver enabled notifications.</li><li><strong>Location search:</strong> place names or selected coordinates entered when searching for birth places or Panchangam locations.</li></ul></div>
+      </section>
+      <section id="usage">
+        <div data-lang="ta"><h2>3. தகவல்கள் எதற்காகப் பயன்படுத்தப்படுகின்றன?</h2><p>உள்நுழைவு, செயலி அணுகல், சந்தா/அனுமதி சரிபார்ப்பு, ஜாதகம் மற்றும் பஞ்சாங்கக் கணக்கீடு, உங்கள் பதிவுகளைச் சேமித்துக் காட்டுதல், விருப்ப அறிவிப்புகள், ஆலோசனை வேண்டுகோள்களுக்கு பதிலளித்தல் மற்றும் நீங்கள் தேர்ந்தெடுக்கும் Backup / Recover / Sync செயல்களுக்குப் பயன்படுத்தப்படுகின்றன. உங்கள் ஜாதக மற்றும் ஆராய்ச்சி பதிவுகளை விளம்பரதாரர்களுக்கு விற்க மாட்டோம்.</p></div>
+        <div data-lang="en"><h2>3. Why we use data</h2><p>Data is used for sign-in, app access, subscription/approval verification, astrology and Panchangam calculations, maintaining and displaying your records, optional reminders, handling consultation requests, and user-selected Backup / Recover / Sync actions. We do not sell your horoscope or research records to advertisers.</p></div>
+      </section>
+      <section id="storage">
+        <div data-lang="ta"><h2>4. உள்ளூர் சேமிப்பு மற்றும் Google Drive</h2><p>ஜாதகங்கள் மற்றும் ஆய்வுக் குறிப்புகளில் பல பதிவுகள் உங்கள் சாதனத்தின் செயலி சேமிப்பில் வைக்கப்படுகின்றன. உள்நுழைவு, அணுகல் அனுமதி, கட்டண/ஆலோசனை நிலை போன்ற சேவைப் பதிவுகள் Firebase-ல் இருக்கலாம்.</p><p>உங்கள் விருப்பப்படி <strong>Backup, Recover, Sync</strong> அழுத்தினால் மட்டும், ஆதரிக்கப்படும் செயலிப் பதிப்புகளில் உங்கள் சொந்த Google Drive-ன் மறைக்கப்பட்ட <code>appDataFolder</code>-ல் சுருக்கப்பட்ட காப்புப்பிரதி சேமிக்கப்படும் அல்லது அங்கிருந்து மீட்டெடுக்கப்படும். Google Drive-க்கான தனி அனுமதி அப்போது கேட்கப்படும். இது தானியங்கி Background Sync அல்ல; உங்கள் மின்னஞ்சல் பெட்டியில் கோப்பு சேமிக்கப்படாது.</p><div class="note"><strong>முக்கியம்:</strong> Drive காப்புப்பிரதி gzip முறையில் சுருக்கப்படுகிறது; தனியான கடவுச்சொல் மூலம் end-to-end encryption செய்யப்பட்டதாகக் கருத வேண்டாம். Drive அனுமதி வேண்டாம் என்றால் இந்த விருப்ப வசதியைப் பயன்படுத்தாமல் இருக்கலாம்.</div></div>
+        <div data-lang="en"><h2>4. On-device storage and Google Drive</h2><p>Many saved horoscopes and research records are kept in the app's local storage on your device. Service records such as sign-in identity, access approval, payment and consultation status may be stored in Firebase.</p><p>Only when you explicitly select <strong>Backup, Recover or Sync</strong> in a supported app version does the app save or retrieve a compressed backup in the hidden <code>appDataFolder</code> of <strong>your own Google Drive account</strong>. Separate Google Drive authorization is requested for this feature. It is not automatic background synchronization and does not store files in your Gmail inbox.</p><div class="note"><strong>Important:</strong> Drive backups are gzip-compressed, not independently password-encrypted end-to-end. The Drive feature is optional.</div></div>
+      </section>
+      <section id="third-parties">
+        <div data-lang="ta"><h2>5. பயன்படுத்தப்படும் வெளிச் சேவைகள்</h2><ul><li><strong>Google / Firebase:</strong> Google Sign-In, Firebase Authentication, Firestore, Cloud Functions மற்றும் தேர்ந்தெடுக்கப்பட்ட push அறிவிப்புகள்.</li><li><strong>Google Drive API:</strong> உங்கள் அனுமதியுடன், செயலியின் தனிப்பட்ட காப்புப்பிரதி கோப்புகளைச் சேமித்தல் / மீட்டெடுத்தல்.</li><li><strong>Razorpay:</strong> செயலியில் வழங்கப்படும் கட்டணச் சேவைகளின் பணப் பரிமாற்றம் மற்றும் நிலை சரிபார்ப்பு; பொருந்தக்கூடிய பதிப்புகளில் மற்ற அங்கீகரிக்கப்பட்ட கட்டண சேவைகளும் இருக்கலாம்.</li><li><strong>LocationIQ:</strong> நீங்கள் தேடும் ஊர்/இடப் பெயரைத் தேட உதவுகிறது.</li><li><strong>ஜோதிடக் கணக்கீடு சேவை:</strong> இணையக் கணக்கீடு பயன்படுத்தப்படும் போது பிறந்த தேதி/நேரம் மற்றும் தேர்ந்தெடுத்த இடத்தின் ஆயத்தொலைவுகள் கணக்கீட்டு சேவைக்கு அனுப்பப்படலாம்.</li><li><strong>Google AdMob (இயக்கப்பட்டால் மட்டும்):</strong> கீழே விளக்கப்பட்டுள்ளபடி விளம்பரத் தகவல் செயலாக்கம்.</li></ul><p>ஒவ்வொரு வழங்குநருக்கும் அவர்களுடைய தனியுரிமை நடைமுறைகள் பொருந்தலாம்.</p></div>
+        <div data-lang="en"><h2>5. Third-party services</h2><ul><li><strong>Google / Firebase:</strong> Google Sign-In, Firebase Authentication, Firestore, Cloud Functions and enabled push notifications.</li><li><strong>Google Drive API:</strong> stores and retrieves private app-backup files when authorized by you.</li><li><strong>Razorpay:</strong> handles payment checkout and verification for supported purchases; other approved payment processors may apply in future versions.</li><li><strong>LocationIQ:</strong> receives place-search queries for birth-place and Panchangam selection.</li><li><strong>Astrology calculation service:</strong> where an online calculation is used, birth date/time and selected location coordinates may be sent to the calculation endpoint.</li><li><strong>Google AdMob (only if enabled):</strong> advertising-related processing described below.</li></ul><p>Each provider may operate under its own privacy terms.</p></div>
+      </section>
+      <section id="ads">
+        <div data-lang="ta"><h2>6. விளம்பரங்கள்</h2><p>சில செயலிப் பதிப்புகளில் இலவச / அனுமதி பெறாத பயனர்களுக்கு Google AdMob விளம்பரங்கள் <strong>இயக்கப்படலாம்</strong>. அவை இயக்கப்பட்டிருந்தால், விளம்பர SDK சாதன அடையாளங்கள், விளம்பர அடையாளம், IP முகவரி மற்றும் தொடர்புடைய பயன்பாட்டு தகவல்களை அதன் கொள்கைப்படி செயலாக்கலாம். தேவையான இடங்களில் தனியுரிமை ஒப்புதல் / தேர்வு வசதி வழங்கப்படும். வாடிக்கையாளரின் ஜாதகப் பதிவுகளை விளம்பரத் தேர்விற்காக நாங்கள் நேரடியாக அனுப்புவதில்லை.</p></div>
+        <div data-lang="en"><h2>6. Advertising</h2><p>Some app versions <strong>may enable</strong> Google AdMob advertising for free or unapproved users. When enabled, the ads SDK may process device identifiers, an advertising identifier, IP address and relevant usage information according to its practices. Consent or privacy-choice controls will be presented where required. We do not directly supply saved horoscope records to AdMob for ad targeting.</p></div>
+      </section>
+      <section id="permissions">
+        <div data-lang="ta"><h2>7. அனுமதிகள் மற்றும் கட்டுப்பாடுகள்</h2><p>இணைய அணுகல் Google Sign-In, இடத் தேடல், ஒப்புதல்/கட்டணம் மற்றும் Drive Backup-க்கு தேவைப்படலாம். அனுமதி அளித்தால் அறிவிப்புகள் மற்றும் அவற்றின் நேர நிர்ணயத்திற்கு Android notification / alarm வசதிகள் பயன்படுத்தப்படலாம். Google Drive அனுமதி செயலியின் மறைக்கப்பட்ட Backup பகுதியை அணுகுவதற்கே கேட்கப்படும்; உங்கள் Drive-ல் உள்ள எல்லா கோப்புகளையும் படிக்க வேண்டிய அவசியமில்லை.</p></div>
+        <div data-lang="en"><h2>7. App permissions and controls</h2><p>Internet access may be used for Google Sign-In, place search, entitlement/payment checks and Drive backup. With permission, Android notification and alarm capabilities may be used for scheduled reminders. The optional Google Drive scope is limited to the app's hidden backup area; broad access to unrelated Drive files is not needed.</p></div>
+      </section>
+      <section id="retention">
+        <div data-lang="ta"><h2>8. பாதுகாப்பு மற்றும் சேமிப்பு காலம்</h2><p>தரவு பரிமாற்றத்திற்குப் பொருந்தக்கூடிய HTTPS/TLS, Google/Firebase கணக்கு கட்டுப்பாடுகள் மற்றும் சாதனத்தின் செயலி சேமிப்பு பாதுகாப்பு பயன்படுத்தப்படுகின்றன. எந்த இணையச் சேமிப்பும் 100% அபாயமற்றது என்று உறுதி அளிக்க முடியாது.</p><p>உள்ளூர் பதிவுகள் அவற்றை நீக்கும் வரை அல்லது செயலி தரவை அழிக்கும் வரை சாதனத்தில் இருக்கலாம். கணக்கு / கட்டணம் தொடர்பான சேவைப் பதிவுகள் கணக்கு செயல்பாடு, பாதுகாப்பு, சர்ச்சைத் தீர்வு மற்றும் பொருந்தும் சட்டத் தேவைகளுக்கேற்ப வைக்கப்படலாம். Google Drive Backup நகல்கள் பயனர் கட்டுப்பாட்டிலுள்ள Drive-ல் நீக்கப்படும் வரை இருக்கலாம்.</p></div>
+        <div data-lang="en"><h2>8. Security and retention</h2><p>We use applicable HTTPS/TLS transport, Google/Firebase account controls and device app-storage protections. No method of digital storage can be guaranteed completely risk-free.</p><p>Local records may remain until deleted or app storage is cleared. Service records associated with accounts and payments may be retained for account operation, security, dispute resolution and applicable legal obligations. Optional Google Drive backup copies can remain in the user's own Drive until removed there.</p></div>
+      </section>
+      <section id="rights">
+        <div data-lang="ta"><h2>9. உங்கள் தேர்வுகள்</h2><ul><li>Google Drive Backup-ஐ பயன்படுத்தாமல் இருக்கலாம்; அனுமதியை Google கணக்கு அமைப்புகளில் திரும்பப் பெறலாம்.</li><li>சாதனத்தில் சேமித்த பதிவுகளை செயலியின் பொருந்தும் திரைகளில் மாற்றலாம் அல்லது நீக்கலாம்.</li><li>Android அமைப்புகளில் அறிவிப்பு அனுமதியை நிர்வகிக்கலாம்.</li><li>கணக்குத் தரவு குறித்த கேள்விகள், திருத்தங்கள் மற்றும் நீக்கக் கோரிக்கைகளை கீழே உள்ள மின்னஞ்சலுக்கு அனுப்பலாம்.</li></ul></div>
+        <div data-lang="en"><h2>9. Your choices</h2><ul><li>Skip optional Google Drive backups or revoke Drive access through Google Account settings.</li><li>Edit or delete locally saved records using available app controls.</li><li>Manage notifications through Android settings.</li><li>Request access information, correction or deletion of account-linked data using the contact below.</li></ul></div>
+      </section>
+      <section id="deletion">
+        <div data-lang="ta"><h2>10. கணக்கு மற்றும் தரவுகளை நீக்குதல்</h2><p>JP's Astro Research செயலியில் உங்கள் <strong>Google கணக்கு → கணக்கை நீக்கக் கோரு</strong> என்பதைப் பயன்படுத்தலாம். செயலி இல்லாவிட்டாலும், எங்கள் <a href="https://jpsastro.in/delete-account.html">கணக்கு நீக்கக் கோரிக்கை பக்கத்தின்</a> வழியாக மின்னஞ்சல் அனுப்பலாம் அல்லது நேரடியாக <a href="mailto:jayaprakash3195@gmail.com?subject=JP%27s%20Astro%20Research%20Account%20Deletion">jayaprakash3195@gmail.com</a> முகவரியைத் தொடர்பு கொள்ளலாம்.</p><p>கணக்கைச் சரிபார்த்த பிறகு எங்கள் கட்டுப்பாட்டில் உள்ள அதனுடன் தொடர்புடைய கணக்கு மற்றும் சேவைத் தரவுகளை நீக்குவதற்கான கோரிக்கையைச் செயல்படுத்துவோம்; சட்டப்படி வைக்க வேண்டிய கட்டண/பரிவர்த்தனைப் பதிவுகள் விதிவிலக்காக இருக்கலாம். உங்கள் சாதனத்தின் உள்ளூர் தகவல்களை நீக்க செயலித் தரவை அழிக்க வேண்டும். <strong>உங்கள் தனிப்பட்ட Google Drive-ல் உள்ள Backup கோப்புகள் தனியாக நீக்கப்பட வேண்டும்</strong>; எங்களிடம் நீக்கக் கோரிக்கை விடுப்பது மட்டும் அவற்றை தானாக நீக்காது.</p></div>
+        <div data-lang="en"><h2>10. Account and data deletion</h2><p>In the JP's Astro Research app, use <strong>Google Account → Request account deletion</strong>. Without the app, submit a request through our <a href="https://jpsastro.in/delete-account.html">account deletion page</a> or email <a href="mailto:jayaprakash3195@gmail.com?subject=JP%27s%20Astro%20Research%20Account%20Deletion">jayaprakash3195@gmail.com</a>.</p><p>After verifying the request, we will process deletion of account-linked service data under our control, except records that must be retained for applicable legal/payment obligations. Local app data on your device must be cleared separately. <strong>Backup copies in your own Google Drive must also be deleted separately</strong>; an account-deletion request to us does not automatically erase user-owned Drive files.</p></div>
+      </section>
+      <section id="children">
+        <div data-lang="ta"><h2>11. குழந்தைகள் தொடர்பான தகவல்கள்</h2><p>இது பொதுவான ஜோதிட ஆய்வு செயலியாகும்; குறிப்பாக குழந்தைகளை நோக்கி வடிவமைக்கப்படவில்லை. பெற்றோர் அல்லது பாதுகாவலர், குழந்தை தொடர்பான தனிப்பட்ட தகவல் குறித்து கேள்வி அல்லது நீக்கக் கோரிக்கை இருந்தால் எங்களைத் தொடர்பு கொள்ளலாம்.</p></div>
+        <div data-lang="en"><h2>11. Information relating to children</h2><p>This is a general-purpose astrology and research application, not designed specifically for children. Parents or guardians may contact us about personal information relating to a child or request its deletion.</p></div>
+      </section>
+      <section id="changes">
+        <div data-lang="ta"><h2>12. கொள்கை மாற்றங்கள்</h2><p>புதிய அம்சங்கள், Google Drive, விளம்பரங்கள் அல்லது வேறு தரவு பயன்பாடுகள் செயல்படுத்தப்படும்போது இந்தக் கொள்கை மாற்றப்படலாம். மாற்றங்கள் இந்தப் பக்கத்தில் புதுப்பிக்கப்பட்ட நடைமுறைத் தேதியுடன் வெளியிடப்படும்.</p></div>
+        <div data-lang="en"><h2>12. Changes to this policy</h2><p>We may update this policy as features, Google Drive backup, advertising or data practices change. Updates will be published here with a revised effective date.</p></div>
+      </section>
+      <section id="contact">
+        <div data-lang="ta"><h2>13. தொடர்பு</h2><div class="contact"><strong>JP's Astro Research</strong><br />மின்னஞ்சல்: <a href="mailto:jayaprakash3195@gmail.com">jayaprakash3195@gmail.com</a><br />இணையதளம்: <a href="https://jpsastro.in/">https://jpsastro.in</a><br />கணக்கு நீக்கம்: <a href="https://jpsastro.in/delete-account.html">கோரிக்கை பக்கம்</a></div></div>
+        <div data-lang="en"><h2>13. Contact</h2><div class="contact"><strong>JP's Astro Research</strong><br />Email: <a href="mailto:jayaprakash3195@gmail.com">jayaprakash3195@gmail.com</a><br />Website: <a href="https://jpsastro.in/">https://jpsastro.in</a><br />Account deletion: <a href="https://jpsastro.in/delete-account.html">Request page</a></div></div>
+      </section>
+    </article>
+  </div>
+</main>
+<footer class="footer">© 2026 JP's Astro Research · <a href="https://jpsastro.in/">Home</a> · <a href="https://jpsastro.in/delete-account.html">Account Deletion</a></footer>
+<script>
+  (function () {
+    const root = document.documentElement;
+    const tamilButton = document.getElementById('to-ta');
+    const englishButton = document.getElementById('to-en');
+    function selectLanguage(language) {
+      root.lang = language;
+      tamilButton.setAttribute('aria-pressed', String(language === 'ta'));
+      englishButton.setAttribute('aria-pressed', String(language === 'en'));
+    }
+    tamilButton.addEventListener('click', function () { selectLanguage('ta'); });
+    englishButton.addEventListener('click', function () { selectLanguage('en'); });
+  })();
+</script>
+</body>
+</html>
