@@ -28,6 +28,10 @@
     .lead { color:var(--muted); margin-top:9px; }
     .meta { margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; }
     .tag { border:1px solid #dbe1e9; border-radius:999px; padding:4px 12px; font-size:.82rem; color:#42526a; }
+    .summary { border:1px solid #b9d2e7; background:#f0f7ff; border-radius:16px; padding:20px 26px; margin:0 0 22px; }
+    .summary h2 { color:#113c63; margin:0 0 8px; }
+    .summary p { margin:8px 0; }
+    .summary strong { font-weight:750; }
     .layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:22px; align-items:start; }
     aside { position:sticky; top:22px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
     aside h2 { margin:0 0 8px; font-size:.92rem; }
@@ -67,6 +71,17 @@
     <div data-lang="en"><h1>Privacy Policy</h1><p class="lead">How JP's Astro Research handles Google account details, horoscope data, research notes, and optional Google Drive backups.</p></div>
     <div class="meta"><span class="tag"><span data-lang="ta">நடைமுறை தேதி</span><span data-lang="en">Effective date</span>: 19 November 2026</span><span class="tag">Android · Website</span><span class="tag"><span data-lang="ta">சுயாதீன செயலி உருவாக்குநர்</span><span data-lang="en">Independent app developer</span></span></div>
   </div>
+  <!-- Public English Google API disclosure: visible without JavaScript or changing language tabs. -->
+  <section class="summary" aria-label="Google account and Drive privacy disclosure">
+    <h2>Google User Data &amp; Drive Backup — Privacy Summary</h2>
+    <p><strong>What this app does:</strong> JP's Astro Research is a Tamil-first Android astrology and Panchangam app used to calculate horoscopes, save birth details, maintain life-event histories and research notes, and request consultations. Its Android application ID is <strong>in.jpsastro.research</strong>.</p>
+    <p><strong>Google Sign-In:</strong> When you sign in, we access your Google account name, email address and basic profile information to authenticate your account with Firebase, associate your data with your account and manage app access. Signing in does not grant access to your Gmail messages.</p>
+    <p><strong>Optional Google Drive permission:</strong> If you press <strong>Backup, Recover or Sync</strong> in Profile, the app separately requests <code>https://www.googleapis.com/auth/drive.appdata</code>. This permission is used only to create, read, update or remove backup files in the app's private Google Drive app-data folder. It does not allow browsing unrelated files or email. You can use the app without granting Drive backup permission.</p>
+    <p><strong>Data included in backups:</strong> Backups can contain horoscope names and birth details, event history, astrological research notes and settings. Backups are stored in <strong>your own Google Drive account</strong>, not in the developer's Drive. Backup/Restore/Sync is initiated by the user, and these backup files are compressed but <strong>not independently end-to-end encrypted with a separate password</strong>.</p>
+    <p><strong>How data is used and shared:</strong> Google account information is used for sign-in, account management and the user-requested Drive feature. Google/Firebase processes required information to provide authentication and app services. We do not sell Google user data or use Drive backup contents to target advertisements. Where optional ads are enabled, their SDK may process separate device and advertising information as described below. Our use and transfer of information received from Google APIs is subject to the Google API Services User Data Policy, including its Limited Use requirements.</p>
+    <p><strong>Your controls and retention:</strong> You can skip Drive backup, revoke its permission in your Google Account, or request deletion of account-linked data at <a href="https://jpsastro.in/delete-account.html">Account Deletion</a>. Local phone data and backup copies in your own Drive may require separate deletion. See the detailed sections below for retention, payment, notifications, third parties and contact information.</p>
+    <p lang="ta"><strong>தமிழில்:</strong> Google உள்நுழைவு உங்கள் பெயர், மின்னஞ்சல் மற்றும் அடிப்படை Google சுயவிவரத் தகவல்களை மட்டுமே கணக்கு அங்கீகாரத்துக்குப் பயன்படுத்துகிறது. Google Drive அனுமதி நீங்கள் காப்புப்பிரதி / மீட்டெடுப்பு / ஒத்திசைவு தேர்ந்தெடுக்கும் போது மட்டும் கேட்கப்படுகிறது; உங்கள் Gmail செய்திகளுக்கோ பிற Drive கோப்புகளுக்கோ அணுகல் கேட்கப்படாது. விரிவான தமிழ்க் கொள்கை கீழே உள்ளது.</p>
+  </section>
   <div class="layout">
     <aside aria-label="Contents">
       <div data-lang="ta"><h2>உள்ளடக்கம்</h2><a href="#who">1. எங்களைப் பற்றி</a><a href="#collect">2. சேகரிக்கப்படும் தகவல்கள்</a><a href="#usage">3. தகவல்களின் பயன்பாடு</a><a href="#storage">4. சேமிப்பு மற்றும் காப்புப்பிரதி</a><a href="#third-parties">5. வெளிச் சேவைகள்</a><a href="#ads">6. விளம்பரங்கள்</a><a href="#permissions">7. அனுமதிகள்</a><a href="#retention">8. தரவு பாதுகாப்பு / காலம்</a><a href="#rights">9. உங்கள் தேர்வுகள்</a><a href="#deletion">10. கணக்கு மற்றும் தரவு நீக்கம்</a><a href="#children">11. குழந்தைகள்</a><a href="#changes">12. மாற்றங்கள்</a><a href="#contact">13. தொடர்பு</a></div>
